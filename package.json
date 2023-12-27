@@ -2,6 +2,10 @@
   "name": "blankslate",
   "module": "main.ts",
   "type": "module",
+  "scripts": {
+    "deploy": "source ./deploy.sh",
+    "migrate:words": "cd blankslate && source ./sqlmigration.sh words"
+  },
   "devDependencies": {
     "bun-types": "latest"
   },
