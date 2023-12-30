@@ -1,0 +1,26 @@
+{% extends "master.html" %}
+
+{% block main %}
+    <h2>All Words</h2>
+    
+    <ul>
+        {% for word in allwords %}
+            <li> 
+                #{{word.id}}: 
+                <span>
+                    {% if word.fix == "suffix" %}
+                        {{ word.word }} ______ ( Suffix ) 
+                    {% elif word.fix == "prefix" %}
+                        ______ {{ word.word }} ( Prefix ) 
+                    {% endif %}
+                    - Created {{word.created_date}}
+                </span>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block footer %} 
+    <p><a href="/">HOME</a></p>
+    <p>&copy; {{year}} Kyle Tolliver</p> 
+{% endblock %}

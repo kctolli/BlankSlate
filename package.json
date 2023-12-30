@@ -3,7 +3,10 @@
   "module": "main.ts",
   "type": "module",
   "scripts": {
+    "admin:superuser": "cd blankslate && python3 manage.py createsuperuser",
+    "dev": "cd blankslate && python3 manage.py runserver",
     "deploy": "source ./deploy.sh",
+    "migrate": "cd blankslate && python3 manage.py migrate",
     "migrate:words": "cd blankslate && source ./sqlmigration.sh words"
   },
   "devDependencies": {

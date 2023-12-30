@@ -1,0 +1,19 @@
+{% extends "master.html" %}
+
+{% block main %}
+    <h2> {{ word.word }} </h2>
+    
+    <section>
+        {% if word.fix == "suffix" %}
+            <p> {{word.word}} ______ </p>
+        {% elif word.fix == "prefix" %}
+            <p> ______ {{word.word}} </p>
+        {% endif %}
+    </section>
+    
+{% endblock %}
+
+{% block footer %} 
+    <p><a href="/">HOME</a></p>
+    <p>&copy; {{year}} Kyle Tolliver</p> 
+{% endblock %}
