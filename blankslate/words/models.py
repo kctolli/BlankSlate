@@ -20,7 +20,5 @@ class Word(models.Model):
         null=False
     )
 
-    created_date = models.DateTimeField(default=Date().getDjangoDate())
-
     def getMaxId(self):
         return self.objects.all().count()
