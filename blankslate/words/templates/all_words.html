@@ -3,20 +3,31 @@
 {% block main %}
     <h2>All Words</h2>
     
-    <ul>
-        {% for word in allwords %}
-            <li> 
-                #{{word.id}}: 
-                <span>
-                    {% if word.fix == "suffix" %}
-                        {{ word.word }} ______ ( Suffix ) 
-                    {% elif word.fix == "prefix" %}
-                        ______ {{ word.word }} ( Prefix ) 
-                    {% endif %}
-                </span>
-            </li>
-        {% endfor %}
-    </ul>
+    <section>
+        <p> Number of Words: {{count}} </p>
+        <b> Pick another <a href="../word/">word</a>. </b>
+    </section>
+
+    <br />
+    <button onclick="toggle('show-all')">Show All Words</button>
+
+    <section id="show-all" style="display: none">
+        <br />
+        <ul>
+            {% for word in allwords %}
+                <li> 
+                    #{{word.id}}: 
+                    <span>
+                        {% if word.fix == "suffix" %}
+                            {{ word.word }} ______
+                        {% elif word.fix == "prefix" %}
+                            ______ {{ word.word }}
+                        {% endif %}
+                    </span>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>    
 {% endblock %}
 
 {% block footer %} 

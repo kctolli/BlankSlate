@@ -1,5 +1,4 @@
 from datetime import datetime
-from django.utils import timezone
 
 class Date:
     def __init__(self):
@@ -31,11 +30,3 @@ class Date:
             int: The current year.
         """
         return self.date.year
-    
-    def getDjangoDate(self):
-        """
-        Get the current date and time in the timezone used by Django.
-
-        :return: The current date and time in the Django timezone.
-        """
-        return timezone.now()
