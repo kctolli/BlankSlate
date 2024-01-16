@@ -20,8 +20,8 @@ def all(request):
     return HttpResponse(
         template.render(
             {
-                'allwords': Word.getAllWords(Word).values(),
-                'count': Word.getMaxId(Word),
+                'allwords': Word.getAllWords().values(),
+                'count': Word.getMaxId(),
                 'year': year
             }, 
             request
@@ -42,7 +42,7 @@ def word(request):
     return HttpResponse(
         template.render(
             {
-                'word': Word.getRandomWord(Word),
+                'word': Word.getRandomWord(),
                 'year': year
             }, 
             request

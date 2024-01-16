@@ -20,7 +20,7 @@ class Word(models.Model):
         null=False
     )
 
-    def getAllWords(self):
+    def getAllWords():
         """
         Get all the words from the objects in the database.
 
@@ -30,18 +30,18 @@ class Word(models.Model):
         Returns:
             object: All the words from the database.
         """
-        return self.objects.all()
+        return Word.objects.all()
 
-    def getMaxId(self):
+    def getMaxId():
         """
         Get the maximum ID value from the objects.
 
         Returns:
             int: The maximum ID value.
         """
-        return self.objects.all().count()
+        return Word.objects.all().count()
     
-    def getRandomWord(self):
+    def getRandomWord():
         """
         Get a random word from the objects in the database.
 
@@ -51,5 +51,5 @@ class Word(models.Model):
         Returns:
             object: A randomly selected word from the database.
         """
-        id = randomint(self.getMaxId(self))
-        return self.objects.get(id=id)
+        id = randomint(Word.getMaxId())
+        return Word.objects.get(id=id)
